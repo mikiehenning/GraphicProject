@@ -5,54 +5,94 @@ using UnityEngine;
 public class ShipMov : MonoBehaviour 
 {
 
+
+	//Things to keep track of for other scripts
+	public float Fuel;
+	public float Health;
+	public float Score;
+	public float minerals;
+	//Other things 
+	GameObject Warp;
 	public float Speed;
-	public Transform FlightCube;
-	public Transform FlightCubeTop;
-	public Transform FlightCubeBottom;
-	public float tilt;
+	public float TurnSpeed;
 	public float Rot;
+	public float lossRate;
+	bool thrust = false;
 	Rigidbody rb;
 	void Start()
 	{
-		rb = GetComponent<Rigidbody> ();
+		minerals = 0;
+		Score = 0;
+		Fuel = 100;
+		Health = 250;
+		Warp = GameObject.Find ("Warp_Drive_A");
+		Warp.SetActive (false);
+		Warp.SetActive (false);
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
-		
-		if (Input.GetKey (KeyCode.Space))
+		if (Fuel > 100) 
 		{
-			rb.AddForce (transform.forward * Speed);
-			if (rb.velocity.magnitude > 300f) 
-			{
-				
-			}
+			Fuel = 100;
 		}
-		if(rb.velocity.magnitude > 0)
+		if (Health > 250) 
 		{
-//LEFT TURN
-			if (Input.GetKey (KeyCode.A))
-			{
-				transform.RotateAround (FlightCube.position, new Vector3 (0, 1, 0) * Time.deltaTime / 3, -Rot);
+			Health = 250;
+		}
+		if (Fuel < 0) 
+		{
+			Fuel = 0;
+		}
+		if (Health < 1)
+		{
+			Destroy (gameObject);
+		}
+
 		
+		Fuel = Fuel - Time.deltaTime * lossRate;
+		if (Fuel > 0)
+		{
+			transform.Translate (new Vector3 (0, 0, 1) * Speed * Time.deltaTime);
+//LEFT TURN
+			if (Input.GetKey (KeyCode.A)) 
+			{
+				transform.Rotate (new Vector3 (0, -1, 0) * Time.deltaTime * TurnSpeed);
 			}
 //RIGHT TURN
 			if (Input.GetKey (KeyCode.D)) 
 			{
-				transform.RotateAround (FlightCube.position, new Vector3 (0, 1, 0) * Time.deltaTime / 3, Rot);
+			
+				transform.Rotate (new Vector3 (0, 1, 0) * Time.deltaTime * TurnSpeed);
 
 			}
 //SkyBound
 			if (Input.GetKey (KeyCode.S)) 
 			{
-				transform.RotateAround (FlightCubeTop.position, new Vector3 (0, 0, -1) * Time.deltaTime / 3, Rot);
+				transform.Rotate (new Vector3 (-1, 0, 0) * Time.deltaTime * TurnSpeed);
 			}
-		}
 //EarthBound
-		if (Input.GetKey (KeyCode.W)) 
-		{
-			transform.RotateAround (FlightCubeBottom.position, new Vector3 (0, 0, 1) * Time.deltaTime / 3, Rot);
+			if (Input.GetKey (KeyCode.W)) 
+			{
+				transform.Rotate (new Vector3 (1, 0, 0) * Time.deltaTime * TurnSpeed);
+			}
+			if (Input.GetKeyDown (KeyCode.Space)) 
+			{
+				
+				thrust = !thrust;
+				Warp.SetActive (thrust);
+				if (thrust) 
+				{
+					Speed = Speed * 8;
+					lossRate = lossRate * 2;
+				}
+				if (!thrust) 
+				{
+			     	Speed /= 8;
+					lossRate /= 2;
+				}
+			}
 		}
 	}
 }

@@ -5,11 +5,11 @@ using UnityEngine;
 public class LaserMov : MonoBehaviour {
 
 	public float laserSpeed;
-	GameObject Aim;
 	Transform Front;
+	ShipMov Movement;
 	void Start ()
 	{
-		Aim = GameObject.Find ("Spawn_R");
+		Movement = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<ShipMov> ();
 	}
 	
 
@@ -17,7 +17,8 @@ public class LaserMov : MonoBehaviour {
 	{
 
 		transform.parent = null; 
-		transform.Translate (new Vector3(0,0,1)* laserSpeed * Time.deltaTime);
+		transform.Translate (new Vector3(0,0,1)* (laserSpeed+ Movement.Speed) * Time.deltaTime);
 		Destroy (gameObject, 2);
+
 	}
 }

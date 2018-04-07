@@ -23,7 +23,7 @@ public class Fire : MonoBehaviour {
 
 		if (period > Delay)
 		{
-			if (Input.GetKey (KeyCode.Alpha1))
+			if (Input.GetMouseButton (0))
 			{
 				LR = !LR;
 				Instantiate (Shot, Switch ().position,Switch().rotation,Switch());
