@@ -18,6 +18,7 @@ public class SpawnStuff : MonoBehaviour
 	public GameObject SuperE;
 	public GameObject SuperF;
 
+
 //Editor for stress testing
 	public int numOfAsteroids;
 	public int numOfSuper;
@@ -26,18 +27,18 @@ public class SpawnStuff : MonoBehaviour
 	GameObject Asteroid;
 	GameObject SuperAsteroid;
 //Reference to Player so that this script continues to spawn more objects
-	PlayerController Player;
-
+	public GameObject Player;
+	PlayerController PlayerController;
 
 	void Start ()
 	{
 		SpawnAsteroids (numOfAsteroids);
 		SpawnSuperAsteroids (numOfSuper);
-		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
+		PlayerController = Player.GetComponent<PlayerController> ();
 	}
 	void Update()
 	{
-		if (Player.Score % 5000 == 0 && Player.Score !=0)
+		if (PlayerController.Score % 5000 == 0 && PlayerController.Score !=0)
 		{
 			SpawnAsteroids (50);
 			SpawnSuperAsteroids (20);

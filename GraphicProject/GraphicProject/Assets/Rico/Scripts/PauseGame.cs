@@ -13,12 +13,13 @@ public class PauseGame : MonoBehaviour {
 	bool canRestart = false;
 
 //Reference to Player
-	PlayerController Player;
+	public GameObject Player;
+	PlayerController PlayerController;
 	void Start()
 	{
 		LosePane1.SetActive (false);
 		LosePane2.SetActive (false);
-		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
+		PlayerController = Player.GetComponent<PlayerController> ();
 		Time.timeScale = 0;
 	}
 	void Update()
@@ -43,12 +44,12 @@ public class PauseGame : MonoBehaviour {
 		}
 
 //GameOver Types
-		if (Player.Fuel <= 0) 
+		if (PlayerController.Fuel <= 0) 
 		{
 			
 			GameOver1 ();
 		}
-		if (Player.Health <= 0) 
+		if (PlayerController.Health <= 0) 
 		{
 			
 			GameOver2 ();

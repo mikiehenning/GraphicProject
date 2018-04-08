@@ -15,14 +15,15 @@ public class RotateSpace2 : MonoBehaviour
 //Other
 	float AsteroidHealth = 100;
 
-//Referencing the Player
-	PlayerController Player;
+//Referencing the PlayerController
+	public GameObject Player;
+	PlayerController PlayerController;
 
-//Make sure that the Script can talk to the Player
+//Make sure that the Script can talk to the PlayerController
 	void Start()
 	{
 		
-		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
+		PlayerController = Player.GetComponent<PlayerController> ();
 		gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0,1000),Random.Range(0,1000),Random.Range(0,1000)));
 
 	}
@@ -40,15 +41,15 @@ public class RotateSpace2 : MonoBehaviour
 		{
 			Destroy (other.gameObject);
 			AsteroidHealth -= 10;
-			Player.Score += 1;
+			PlayerController.Score += 1;
 
 			if (AsteroidHealth == 0) 
 			{
 				
-//Player.Takedamage plays a sound we want, 0 is used because no damage is actually taken
-				Player.Takedamage (0);
+//PlayerController.Takedamage plays a sound we want, 0 is used because no damage is actually taken
+				PlayerController.Takedamage (0);
 				SpawnItem ();
-				Player.Score += 600;
+				PlayerController.Score += 600;
 				Destroy (gameObject);
 			}
 		}

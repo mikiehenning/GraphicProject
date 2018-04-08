@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserSpeed: 250
+  Player: {fileID: 1767272981741320, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
 --- !u!135 &135229691007016514
 SphereCollider:
   m_ObjectHideFlags: 1

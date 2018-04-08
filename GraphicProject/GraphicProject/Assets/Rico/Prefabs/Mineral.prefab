@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d2c1559aff30343998076cf2c67b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 1767272981741320, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
 --- !u!114 &114564046649597436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,6 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotSpeed: 2
   flightSpeed: 25
+  CockPit: {fileID: 1127124888953750, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
+  Player: {fileID: 1767272981741320, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
 --- !u!135 &135382606868166520
 SphereCollider:
   m_ObjectHideFlags: 1

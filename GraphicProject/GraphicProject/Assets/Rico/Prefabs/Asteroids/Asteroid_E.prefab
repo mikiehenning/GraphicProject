@@ -112,6 +112,7 @@ MonoBehaviour:
   Health: {fileID: 1786130259930786, guid: 363ccde613a861b40893b44b93b40c52, type: 2}
   Fuel: {fileID: 1872758057064252, guid: 02061d14803b40141b7fbb4b84252fa9, type: 2}
   Minerals: {fileID: 1974480408847250, guid: 78e9f7710dac86940b131b5a0bf02445, type: 2}
+  Player: {fileID: 1767272981741320, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
 --- !u!135 &135030625776904946
 SphereCollider:
   m_ObjectHideFlags: 1

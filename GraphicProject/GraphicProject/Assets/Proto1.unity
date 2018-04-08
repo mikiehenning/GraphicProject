@@ -270,6 +270,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 69030021}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &70746861 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4007334939637144, guid: 8da76e73aee087b4d90534eb9f09adf0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1741688371}
 --- !u!1001 &253232774
 Prefab:
   m_ObjectHideFlags: 0
@@ -607,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OrbitSpeed: 1
+  Sun: {fileID: 0}
 --- !u!1001 &574973631
 Prefab:
   m_ObjectHideFlags: 0
@@ -1189,6 +1195,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1347614174}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1406268223 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4393076502295366, guid: 8da76e73aee087b4d90534eb9f09adf0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1741688371}
 --- !u!4 &1505884105 stripped
 Transform:
   m_PrefabParentObject: {fileID: 466230, guid: 84c2617c34824af49a0ce8569549f42a, type: 2}
@@ -1222,6 +1233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Laser: {fileID: 1785747015735332, guid: 55b3b2e8129259c4f993d19c701fcb32, type: 2}
+  R_Gun: {fileID: 1406268223}
+  L_Gun: {fileID: 70746861}
 --- !u!4 &1538910760
 Transform:
   m_ObjectHideFlags: 0
@@ -1257,6 +1270,7 @@ MonoBehaviour:
   pausePane: {fileID: 1656102230}
   LosePane1: {fileID: 1688565272}
   LosePane2: {fileID: 25060009}
+  Player: {fileID: 0}
 --- !u!1 &1656102230 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1162446655511416, guid: 8da76e73aee087b4d90534eb9f09adf0,
@@ -1326,6 +1340,53 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114394995855398282, guid: 8da76e73aee087b4d90534eb9f09adf0,
+        type: 2}
+      propertyPath: m_Text
+      value: "Looks like you lost all of your health. \n\nPress R to Try again. \n\nCredits:
+        \n\nTeam: \nMichael Henning- Assets (Space, Asteroids,SpaceShip, Planets)
+        , Project Report, Game Testing, Git Master, Project Leader, Code (Unity C#)\n\nChristopher
+        Poole- UI Development, UI Prototype, Game Testing, Code (Unity C#)\n\nRico
+        Richardson - Sound Design, Code(Unity C#) and Code design\n \nMusic: Jak 2
+        Haven Forest theme\n\nAll other Sound effects pulled from public domain"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649274063897344, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114844282934505722, guid: 8da76e73aee087b4d90534eb9f09adf0,
+        type: 2}
+      propertyPath: m_Text
+      value: "Looks Like you Lost all of your Fuel...\n\nPress R to Try again.\n\nCredits:
+        \n\nTeam: \nMichael Henning- Assets (Space, Asteroids,SpaceShip, Planets)
+        , Project Report, Game Testing, Git Master, Project Leader, Code (Unity C#)\n\nChristopher
+        Poole- UI Development, UI Prototype, Game Testing, Code (Unity C#)\n\nRico
+        Richardson - Sound Design, Code(Unity C#) and Code design\n \nMusic: Jak 2
+        Haven Forest theme\n\nAll other Sound effects pulled from public domain"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933863554309262, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158598399469012, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500656051936516, guid: 8da76e73aee087b4d90534eb9f09adf0,
+        type: 2}
+      propertyPath: StopBoosterFX
+      value: 
+      objectReference: {fileID: 8300000, guid: ae9e4dac48f6fd0409dd31b55f7bc287, type: 3}
+    - target: {fileID: 114500656051936516, guid: 8da76e73aee087b4d90534eb9f09adf0,
+        type: 2}
+      propertyPath: BoosterFX
+      value: 
+      objectReference: {fileID: 8300000, guid: f167f226a2985e8419b0dcb7ea927169, type: 3}
+    - target: {fileID: 114500656051936516, guid: 8da76e73aee087b4d90534eb9f09adf0,
+        type: 2}
+      propertyPath: Warp
+      value: 
+      objectReference: {fileID: 1741688372}
     m_RemovedComponents:
     - {fileID: 114264710333955734, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
     - {fileID: 114632346397387794, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
@@ -1333,6 +1394,11 @@ Prefab:
     - {fileID: 114997301478396944, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1741688372 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1482286714827074, guid: 8da76e73aee087b4d90534eb9f09adf0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1741688371}
 --- !u!1001 &1746450477
 Prefab:
   m_ObjectHideFlags: 0

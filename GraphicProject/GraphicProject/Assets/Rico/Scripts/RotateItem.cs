@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotateItem : MonoBehaviour {
-
+//Setting space Rotations
 	public float RotSpeed;
 	public float flightSpeed;
-	PlayerController Player;
+//Setting public GameObjects
+	public GameObject CockPit;
+//Reference to the Player for movement
+	public GameObject Player;
+	PlayerController PlayerController;
 	bool playerFound;
 
 	void Start()
 	{
-		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
+		PlayerController = Player.GetComponent<PlayerController> ();
 	}
+//If Player is found, they lookAt the player and move "forward"
 	void Update () 
 	{
 		if (!playerFound)
@@ -20,14 +25,14 @@ public class RotateItem : MonoBehaviour {
 		
 		if (playerFound)
 		{
-			transform.LookAt (GameObject.Find ("01_Cockpit").transform.position);
-			transform.Translate (transform.forward * (flightSpeed+Player.Speed) * Time.deltaTime);
+			transform.LookAt (CockPit.transform.position);
+			transform.Translate (transform.forward * (flightSpeed+PlayerController.Speed) * Time.deltaTime);
 		}
 	}
 
 
 
-
+//If they are close enough and touching the "Sphere" object.
 	void OnTriggerStay(Collider other)
 	{
 		if (other.gameObject.name == "Sphere") 

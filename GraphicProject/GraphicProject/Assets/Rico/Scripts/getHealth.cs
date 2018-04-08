@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class GetHealth : MonoBehaviour {
 //Reference to player for Sounds and incrementation
-	PlayerController Player;
+	public GameObject Player;
+	PlayerController PlayerController;
 
 	void Start () 
 	{
-		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();	
+		PlayerController = Player.GetComponent<PlayerController> ();	
 	}
 	void OnTriggerEnter(Collider other)
 	{
-//When "02_CockpitExtension" is touched, send stuff to Player
+//When "02_CockpitExtension" is touched, send stuff to PlayerController
 		if (other.gameObject.name == "02_CockpitExtension")
 		{
-			Player.IncrementHealth ();
+			PlayerController.IncrementHealth ();
+			PlayerController.Score += 100;
 			Destroy (gameObject);
-			Player.Score += 100;
+
 		}
 
 	}

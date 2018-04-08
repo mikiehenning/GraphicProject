@@ -6,10 +6,11 @@ public class LaserMov : MonoBehaviour {
 
 	public float laserSpeed;
 //Reference to player so we can increase the speed of lasers if need be.
-	PlayerController Player;
+	public GameObject Player;
+	PlayerController PlayerController;
 	void Start ()
 	{
-		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
+		PlayerController = Player.GetComponent<PlayerController> ();
 	}
 	
 
@@ -17,7 +18,7 @@ public class LaserMov : MonoBehaviour {
 	{
 
 		transform.parent = null; 
-		transform.Translate (new Vector3(0,0,1)* (laserSpeed+ Player.Speed) * Time.deltaTime);
+		transform.Translate (new Vector3(0,0,1)* (laserSpeed+ PlayerController.Speed) * Time.deltaTime);
 		Destroy (gameObject, 2);
 
 	}

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GetFuel : MonoBehaviour {
 //Reference to Player for Sound
-	PlayerController Player;
+	public GameObject Player;
+	PlayerController PlayerController;
 
 	void Start()
 	{
-		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController>();
+		PlayerController = Player.GetComponent<PlayerController>();
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -16,8 +17,8 @@ public class GetFuel : MonoBehaviour {
 //When "02_CockpitExtension" is touched send Player stuff
 		if (other.gameObject.name == "02_CockpitExtension")
 		{
-			Player.IncrementFuel ();
-			Player.Score += 100;
+			PlayerController.IncrementFuel ();
+			PlayerController.Score += 100;
 			Destroy (gameObject);
 		}
 

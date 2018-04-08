@@ -119,3 +119,4 @@ MonoBehaviour:
   SuperF: {fileID: 190680, guid: 16df6043af012ec4eb06752528e10261, type: 2}
   numOfAsteroids: 1000
   numOfSuper: 20
+  Player: {fileID: 1767272981741320, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}

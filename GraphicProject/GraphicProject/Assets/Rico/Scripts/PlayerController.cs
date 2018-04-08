@@ -28,18 +28,14 @@ public class PlayerController: MonoBehaviour
 	AudioSource SoundMaker;
 
 //Other things 
-	GameObject Warp;
 	public float WarpSpeed;
 	public float Speed;
 	public float TurnSpeed;
 	public float Rot;
 	public float lossRate;
+	public GameObject Warp;
 	bool thrust = false;
 
-	void Awake()
-	{
-		Warp = GameObject.Find ("Warp_Drive_A");
-	}
 	void Start()
 	{
 		Mineral = 0;
@@ -95,13 +91,13 @@ public class PlayerController: MonoBehaviour
 				thrust = !thrust;
 				if (thrust) 
 				{
-					SoundMaker.PlayOneShot (BoosterFX,1f);
+					SoundMaker.PlayOneShot (BoosterFX,2f);
 					Speed = Speed * WarpSpeed;
 					lossRate = lossRate * 2;
 				}
 				if (!thrust) 
 				{
-					SoundMaker.PlayOneShot (StopBoosterFX, .4f);
+					SoundMaker.PlayOneShot (StopBoosterFX, .2f);
 					Speed /= WarpSpeed;
 					lossRate /= 2;
 				}

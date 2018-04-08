@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class GetMineral : MonoBehaviour 
 {
-//Reference to Player for Sounds and incrementation 
-	PlayerController Player;
+//Reference to PlayerController for Sounds and incrementation 
+	public GameObject Player;
+	PlayerController PlayerController;
 
 	void Start()
 	{
-		Player= GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
+		PlayerController= Player.GetComponent<PlayerController> ();
 
 	}
 	void OnTriggerEnter(Collider other)
 	{
-//When "02_CockpitExtension" is touched, send stuff to Player
+//When "02_CockpitExtension" is touched, send stuff to PlayerController
 		if (other.gameObject.name == "02_CockpitExtension")
 		{
-			Player.IncrementMineral ();
-			Player.Score += 300;
+			PlayerController.IncrementMineral ();
+			PlayerController.Score += 300;
 			Destroy (gameObject);
 		}
 

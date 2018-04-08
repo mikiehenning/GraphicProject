@@ -6,10 +6,11 @@ public class Damage : MonoBehaviour
 {
 
 //Player Reference
-	PlayerController Player;
+	public GameObject Player;
+	PlayerController PlayerController;
 	void Start ()
 	{
-		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
+		PlayerController = Player.GetComponent<PlayerController> ();
 	}
 
 //Checking Collisions and incrementing Health
@@ -17,12 +18,12 @@ public class Damage : MonoBehaviour
 	{
 		if (other.gameObject.tag==("Hazard"))
 		{
-			Player.Takedamage (40); 
+			PlayerController.Takedamage (40); 
 			Destroy (other.gameObject);
 		}
 		if (other.gameObject.tag==("SuperHazard"))
 		{
-			Player.Takedamage (100);
+			PlayerController.Takedamage (100);
 			Destroy (other.gameObject);
 		}
 	}

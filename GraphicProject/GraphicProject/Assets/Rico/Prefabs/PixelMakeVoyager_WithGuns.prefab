@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 224098387303842972}
   - component: {fileID: 222296686099054992}
   - component: {fileID: 114956358373904758}
-  - component: {fileID: 114264710333955734}
   m_Layer: 0
   m_Name: Start Text
   m_TagString: Untagged
@@ -218,7 +217,6 @@ GameObject:
   - component: {fileID: 224216011400311076}
   - component: {fileID: 222166082663551162}
   - component: {fileID: 114394995855398282}
-  - component: {fileID: 114632346397387794}
   m_Layer: 0
   m_Name: Death Text
   m_TagString: Untagged
@@ -376,7 +374,6 @@ GameObject:
   - component: {fileID: 224614064284692292}
   - component: {fileID: 222608469785436710}
   - component: {fileID: 114874573814530558}
-  - component: {fileID: 114997301478396944}
   m_Layer: 0
   m_Name: Death GameOver
   m_TagString: Untagged
@@ -686,7 +683,6 @@ GameObject:
   - component: {fileID: 224200677176135846}
   - component: {fileID: 222131153217470958}
   - component: {fileID: 114844282934505722}
-  - component: {fileID: 114287863680704534}
   m_Layer: 0
   m_Name: Fuel Text
   m_TagString: Untagged
@@ -1018,7 +1014,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767272981741320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1206, y: 695.6, z: -1900}
+  m_LocalPosition: {x: -377.88843, y: 674.0416, z: -2435.816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4198299509491356}
@@ -1352,7 +1348,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f1664276a7f734d4ab0a7c343aee36d7, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2189,17 +2185,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114264710333955734
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1045926885396358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e62501fdde6e346b1010743f5384fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114276595307999958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2233,17 +2218,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
---- !u!114 &114287863680704534
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1933863554309262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e62501fdde6e346b1010743f5384fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114288346442205284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2417,7 +2391,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Looks like you lost all of your health. \n\nPress R to Try again. "
+  m_Text: "Looks like you lost all of your health. \n\nPress R to Try again. \n\nCredits:
+    \n\nTeam: \nMichael Henning- Assets (Space, Asteroids,SpaceShip, Planets) , Project
+    Report, Game Testing, Git Master, Project Leader, Code (Unity C#)\n\nChristopher
+    Poole- UI Development, UI Prototype, Game Testing, Code (Unity C#)\n\nRico Richardson
+    - Sound Design, Code(Unity C#) and Code design\n \nMusic: Jak 2 Haven Forest theme\n\nAll
+    other Sound effects pulled from public domain"
 --- !u!114 &114395846204764824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2469,19 +2448,20 @@ MonoBehaviour:
   FuelText: {fileID: 114352575738328498}
   Fuel: 0
   Health: 500
-  Score: 0
+  Score: 53
   Mineral: 0
   RockHitFX: {fileID: 8300000, guid: ae8406920bbc88142a7a9d39eb801684, type: 3}
   HealthFX: {fileID: 8300000, guid: 076e262f0c98ba84c8e68fd7605e4b1f, type: 3}
   FuelFX: {fileID: 8300000, guid: 52a071a05d2eb1e40a2644df5c1614d1, type: 3}
   MineralFX: {fileID: 8300000, guid: 329186b93d798a946a86806a35155896, type: 3}
-  BoosterFX: {fileID: 8300000, guid: d8f0d468bc6f9c7429d3a497ab722aad, type: 3}
-  StopBoosterFX: {fileID: 8300000, guid: 773806ea702eb894fa72ea66f1be5510, type: 3}
+  BoosterFX: {fileID: 8300000, guid: f167f226a2985e8419b0dcb7ea927169, type: 3}
+  StopBoosterFX: {fileID: 8300000, guid: ae9e4dac48f6fd0409dd31b55f7bc287, type: 3}
   WarpSpeed: 5
   Speed: 75
   TurnSpeed: 75
   Rot: 2
   lossRate: 2
+  Warp: {fileID: 1482286714827074}
 --- !u!114 &114598299031046174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2509,17 +2489,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114632346397387794
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1158598399469012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e62501fdde6e346b1010743f5384fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114653991615684012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2531,6 +2500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d00e79bf8b5cc84d90fb7872906ef1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!114 &114660962253597010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2625,10 +2595,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Looks Like you Lost all of your Fuel...
-
-
-    Press R to Try again.'
+  m_Text: "Looks Like you Lost all of your Fuel...\n\nPress R to Try again.\n\nCredits:
+    \n\nTeam: \nMichael Henning- Assets (Space, Asteroids,SpaceShip, Planets) , Project
+    Report, Game Testing, Git Master, Project Leader, Code (Unity C#)\n\nChristopher
+    Poole- UI Development, UI Prototype, Game Testing, Code (Unity C#)\n\nRico Richardson
+    - Sound Design, Code(Unity C#) and Code design\n \nMusic: Jak 2 Haven Forest theme\n\nAll
+    other Sound effects pulled from public domain"
 --- !u!114 &114874573814530558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2744,17 +2716,6 @@ MonoBehaviour:
     : Movement\n\nMouse-Click: Shoot\n\nSpace-Bar: Toggle Boost (uses 2x Fuel)\n\nFuel
     is the green bar, if you run out, you lose......\nOr if you run out of Health...\n\nEnter:
     Pauses the Game"
---- !u!114 &114997301478396944
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399832301556640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e62501fdde6e346b1010743f5384fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &124726640433659654
 Behaviour:
   m_ObjectHideFlags: 1

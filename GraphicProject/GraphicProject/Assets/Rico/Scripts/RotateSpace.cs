@@ -11,11 +11,12 @@ public class RotateSpace : MonoBehaviour
 //Setting AsteroidHealth
 	float AsteroidHealth = 30;
 
-//Reference to Player for Sounds and Incrementations
-	PlayerController Player;
+//Reference to PlayerController for Sounds and Incrementations
+	public GameObject Player;
+	PlayerController PlayerController;
 	void Start()
 	{
-		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
+		PlayerController = Player.GetComponent<PlayerController> ();
 		gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0,100),Random.Range(0,100),Random.Range(0,100)));
 	}
 //Constant Space-Rotation
@@ -30,15 +31,15 @@ public class RotateSpace : MonoBehaviour
 		if (other.gameObject.name == "Laser(Clone)") 
 		{
 			AsteroidHealth -= 10;
-			Player.Score += 1;
+			PlayerController.Score += 1;
 			Destroy (other.gameObject);
 			if (AsteroidHealth == 0) 
 			{
-//Player.Takedamage plays a sound we want, 0 is used because no damage is actually taken
-				Player.Takedamage (0);
+//PlayerController.Takedamage plays a sound we want, 0 is used because no damage is actually taken
+				PlayerController.Takedamage (0);
 				SpawnItem ();
 				Destroy (gameObject);
-				Player.Score += 50;
+				PlayerController.Score += 50;
 			}
 		}
 	}
