@@ -6,12 +6,12 @@ public class RotateItem : MonoBehaviour {
 
 	public float RotSpeed;
 	public float flightSpeed;
-	ShipMov movement;
+	PlayerController Player;
 	bool playerFound;
 
 	void Start()
 	{
-		movement = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<ShipMov> ();
+		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
 	}
 	void Update () 
 	{
@@ -21,7 +21,7 @@ public class RotateItem : MonoBehaviour {
 		if (playerFound)
 		{
 			transform.LookAt (GameObject.Find ("01_Cockpit").transform.position);
-			transform.Translate (transform.forward * (flightSpeed+movement.Speed) * Time.deltaTime);
+			transform.Translate (transform.forward * (flightSpeed+Player.Speed) * Time.deltaTime);
 		}
 	}
 

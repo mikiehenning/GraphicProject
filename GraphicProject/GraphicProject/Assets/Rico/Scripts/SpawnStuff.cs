@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnStuff : MonoBehaviour {
+public class SpawnStuff : MonoBehaviour 
+{
+//LONG LIST OF OBJECTS TO INSTANTIATE
 	public GameObject Asteroid_A;
 	public GameObject Asteroid_B;
 	public GameObject Asteroid_C;
@@ -16,23 +18,29 @@ public class SpawnStuff : MonoBehaviour {
 	public GameObject SuperE;
 	public GameObject SuperF;
 
+//Editor for stress testing
+	public int numOfAsteroids;
+	public int numOfSuper;
 
+//Object placeholders
 	GameObject Asteroid;
 	GameObject SuperAsteroid;
-	ShipMov movement;
-	// Use this for initialization
+//Reference to Player so that this script continues to spawn more objects
+	PlayerController Player;
+
+
 	void Start ()
 	{
-		SpawnAsteroids (5000);
-		SpawnSuperAsteroids (200);
-		movement = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<ShipMov> ();
+		SpawnAsteroids (numOfAsteroids);
+		SpawnSuperAsteroids (numOfSuper);
+		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
 	}
 	void Update()
 	{
-		if (movement.Score % 5000 == 0 && movement.Score !=0)
+		if (Player.Score % 5000 == 0 && Player.Score !=0)
 		{
-			SpawnAsteroids (500);
-			SpawnSuperAsteroids (200);
+			SpawnAsteroids (50);
+			SpawnSuperAsteroids (20);
 		}
 	}
 
@@ -51,7 +59,7 @@ public class SpawnStuff : MonoBehaviour {
 
 
 
-
+//Randomly Spawns 1 of 7 types of asteroids "Amount" of times within a specific space
 	void SpawnAsteroids(int Amount)
 	{
 		for (int i = 0; i < Amount; i++) 
@@ -98,7 +106,7 @@ public class SpawnStuff : MonoBehaviour {
 	}
 
 
-
+//Randomly Spawns 1 of 7 types of Super asteroids "Amount" of times within a specific space
 	void SpawnSuperAsteroids(int Amount)
 	{
 

@@ -5,11 +5,11 @@ using UnityEngine;
 public class LaserMov : MonoBehaviour {
 
 	public float laserSpeed;
-	Transform Front;
-	ShipMov Movement;
+//Reference to player so we can increase the speed of lasers if need be.
+	PlayerController Player;
 	void Start ()
 	{
-		Movement = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<ShipMov> ();
+		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();
 	}
 	
 
@@ -17,7 +17,7 @@ public class LaserMov : MonoBehaviour {
 	{
 
 		transform.parent = null; 
-		transform.Translate (new Vector3(0,0,1)* (laserSpeed+ Movement.Speed) * Time.deltaTime);
+		transform.Translate (new Vector3(0,0,1)* (laserSpeed+ Player.Speed) * Time.deltaTime);
 		Destroy (gameObject, 2);
 
 	}

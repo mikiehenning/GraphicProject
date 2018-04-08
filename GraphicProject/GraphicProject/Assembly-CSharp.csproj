@@ -51,19 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Rico\Scripts\AsteroidCollide.cs" />
-     <Compile Include="Assets\Rico\Scripts\CollectItem.cs" />
+     <Compile Include="Assets\Rico\Scripts\Damage.cs" />
      <Compile Include="Assets\Rico\Scripts\Fire.cs" />
-     <Compile Include="Assets\Rico\Scripts\FuelGet.cs" />
-     <Compile Include="Assets\Rico\Scripts\getHealth.cs" />
+     <Compile Include="Assets\Rico\Scripts\GetFuel.cs" />
+     <Compile Include="Assets\Rico\Scripts\GetHealth.cs" />
      <Compile Include="Assets\Rico\Scripts\GetMineral.cs" />
      <Compile Include="Assets\Rico\Scripts\LaserMov.cs" />
-     <Compile Include="Assets\Rico\Scripts\Look.cs" />
      <Compile Include="Assets\Rico\Scripts\Orbit.cs" />
+     <Compile Include="Assets\Rico\Scripts\PauseGame.cs" />
+     <Compile Include="Assets\Rico\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Rico\Scripts\RotateItem.cs" />
      <Compile Include="Assets\Rico\Scripts\RotateSpace.cs" />
      <Compile Include="Assets\Rico\Scripts\RotateSpace2.cs" />
-     <Compile Include="Assets\Rico\Scripts\ShipMov.cs" />
      <Compile Include="Assets\Rico\Scripts\SpawnStuff.cs" />
      <None Include="Assets\SpaceShipPack\READ ME!.txt" />
  <Reference Include="UnityEngine.UI">

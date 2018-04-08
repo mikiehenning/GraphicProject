@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class getHealth : MonoBehaviour {
+public class GetHealth : MonoBehaviour {
+//Reference to player for Sounds and incrementation
+	PlayerController Player;
 
-	ShipMov movement;
-	// Use this for initialization
 	void Start () 
 	{
-		movement = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<ShipMov> ();	
+		Player = GameObject.Find ("PixelMakeVoyager_WithGuns").GetComponent<PlayerController> ();	
 	}
 	void OnTriggerEnter(Collider other)
 	{
+//When "02_CockpitExtension" is touched, send stuff to Player
 		if (other.gameObject.name == "02_CockpitExtension")
 		{
-			movement.Health += 50;
+			Player.IncrementHealth ();
 			Destroy (gameObject);
-			movement.Score += 100;
+			Player.Score += 100;
 		}
 
 	}
