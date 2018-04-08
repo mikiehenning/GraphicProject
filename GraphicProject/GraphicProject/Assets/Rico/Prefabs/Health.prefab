@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114559850983596552}
   - component: {fileID: 54576738931475808}
   - component: {fileID: 65400253329339258}
-  - component: {fileID: 114613232193163214}
+  - component: {fileID: 114894904357128504}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotSpeed: 2
   flightSpeed: 25
---- !u!114 &114613232193163214
+--- !u!114 &114894904357128504
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

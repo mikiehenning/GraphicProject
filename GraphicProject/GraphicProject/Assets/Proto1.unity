@@ -607,6 +607,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OrbitSpeed: 1
+--- !u!4 &567026277 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4393076502295366, guid: 8da76e73aee087b4d90534eb9f09adf0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1741688371}
 --- !u!1001 &574973631
 Prefab:
   m_ObjectHideFlags: 0
@@ -1222,6 +1227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Laser: {fileID: 1785747015735332, guid: 55b3b2e8129259c4f993d19c701fcb32, type: 2}
+  R_Gun: {fileID: 567026277}
+  L_Gun: {fileID: 1780552460}
 --- !u!4 &1538910760
 Transform:
   m_ObjectHideFlags: 0
@@ -1326,6 +1333,36 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114394995855398282, guid: 8da76e73aee087b4d90534eb9f09adf0,
+        type: 2}
+      propertyPath: m_Text
+      value: "Looks like you lost all of your health. \n\nPress R to Try again. \n\nCredits:
+        \n\nTeam:\nMichael Henning - Asset Gathering, Project Report, Team Leader,
+        Git Master, Game testing, Stress Testing, Code (UnityC#)\n\nChristopher Poole
+        - UI prototype, UI Development, Code (UnityC#),Game Testing, Stress Testing
+        \n\nRico Richardson - Code (UnityC#), Code Design, Sound Design, Game Testing\n\nMusic:
+        Jak 2 Haven Forest\n\nAll other sound effects are public domain "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114844282934505722, guid: 8da76e73aee087b4d90534eb9f09adf0,
+        type: 2}
+      propertyPath: m_Text
+      value: "Looks Like you Lost all of your Fuel...\n\nPress R to Try again.\n\nCredits:
+        \n\nTeam:\nMichael Henning - Asset Gathering, Project Report, Team Leader,
+        Git Master, Game testing, Stress Testing, Code (UnityC#)\n\nChristopher Poole
+        - UI prototype, UI Development, Code (UnityC#),Game Testing, Stress Testing
+        \n\nRico Richardson - Code (UnityC#), Code Design, Sound Design, Game Testing\n\nMusic:
+        Jak 2 Haven Forest\n\nAll other sound effects are public domain "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500656051936516, guid: 8da76e73aee087b4d90534eb9f09adf0,
+        type: 2}
+      propertyPath: BoosterFX
+      value: 
+      objectReference: {fileID: 8300000, guid: f167f226a2985e8419b0dcb7ea927169, type: 3}
+    - target: {fileID: 114500656051936516, guid: 8da76e73aee087b4d90534eb9f09adf0,
+        type: 2}
+      propertyPath: StopBoosterFX
+      value: 
+      objectReference: {fileID: 8300000, guid: ae9e4dac48f6fd0409dd31b55f7bc287, type: 3}
     m_RemovedComponents:
     - {fileID: 114264710333955734, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
     - {fileID: 114632346397387794, guid: 8da76e73aee087b4d90534eb9f09adf0, type: 2}
@@ -1375,6 +1412,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 936ccf093d38c8741ad20413ef97a220, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1780552460 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4007334939637144, guid: 8da76e73aee087b4d90534eb9f09adf0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1741688371}
 --- !u!1 &1785772311
 GameObject:
   m_ObjectHideFlags: 0

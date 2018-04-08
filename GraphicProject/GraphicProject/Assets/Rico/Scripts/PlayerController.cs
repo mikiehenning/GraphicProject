@@ -101,7 +101,7 @@ public class PlayerController: MonoBehaviour
 				}
 				if (!thrust) 
 				{
-					SoundMaker.PlayOneShot (StopBoosterFX, .4f);
+					SoundMaker.PlayOneShot (StopBoosterFX, .2f);
 					Speed /= WarpSpeed;
 					lossRate /= 2;
 				}
@@ -116,7 +116,6 @@ public class PlayerController: MonoBehaviour
 	{
 		Health+=50;
 		SoundMaker.PlayOneShot (HealthFX,1f);
-
 	}
 	public void IncrementFuel()
 	{
@@ -126,7 +125,7 @@ public class PlayerController: MonoBehaviour
 	public void IncrementMineral()
 	{
 		Mineral++;
-		SoundMaker.PlayOneShot (MineralFX,1f);
+		SoundMaker.PlayOneShot (MineralFX,.5f);
 	}
 	public void Takedamage(int damage)
 	{
